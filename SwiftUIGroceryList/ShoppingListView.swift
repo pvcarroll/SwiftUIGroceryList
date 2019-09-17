@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-let sampleGroceryList = GroceryList(name: "list 1", groceryItems: [
+let sampleGroceryList = GroceryList(id: 1, name: "list 1", groceryItems: [
     GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
     GroceryItem(name: "chicken", quantity: 1, category: "Meat"),
     GroceryItem(name: "oranges", quantity: 1, category: "Produce"),
@@ -21,14 +21,14 @@ struct ShoppingListView: View {
         List {
             ForEach(Array(sampleGroceryList.categories), id: \.self) { category in
                 Section(header: Text(category)
-                    .frame(minWidth: UIScreen.main.bounds.width, idealWidth: UIScreen.main.bounds.width, maxWidth: .infinity,
-                           minHeight: 0, idealHeight: nil, maxHeight: .infinity, alignment: .leading)
+                    .frame(minWidth: UIScreen.main.bounds.width, idealWidth: UIScreen.main.bounds.width,
+                           maxWidth: .infinity, minHeight: 0, idealHeight: nil,
+                           maxHeight: .infinity, alignment: .leading)
                     .padding(.leading, 20)
                     .background(Color.green)
                     .foregroundColor(Color.white)
                 ) {
                     Text("item")
-                    Text("Add a shopping list...")
                 }
             }
         }

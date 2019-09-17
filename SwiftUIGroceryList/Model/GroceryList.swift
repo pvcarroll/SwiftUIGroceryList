@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct GroceryList {
+struct GroceryList: Identifiable {
+    var id: Int
     var name: String
     var groceryItems: [GroceryItem]
     

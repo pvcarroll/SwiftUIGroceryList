@@ -9,21 +9,21 @@
 import SwiftUI
 
 let shoppingLists: [GroceryList] = [
-    GroceryList(name: "list 1", groceryItems: [
+    GroceryList(id: 1, name: "list 1", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
         GroceryItem(name: "oranges", quantity: 1, category: "produce"),
         GroceryItem(name: "bananas", quantity: 1, category: "produce"),
         GroceryItem(name: "almonds", quantity: 1, category: "nuts")
     ]),
-    GroceryList(name: "list 2", groceryItems: [
+    GroceryList(id: 2, name: "list 2", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
         GroceryItem(name: "oranges", quantity: 1, category: "produce"),
         GroceryItem(name: "bananas", quantity: 1, category: "produce"),
         GroceryItem(name: "almonds", quantity: 1, category: "nuts")
     ]),
-    GroceryList(name: "list 3", groceryItems: [
+    GroceryList(id: 3, name: "list 3", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
         GroceryItem(name: "oranges", quantity: 1, category: "produce"),
@@ -43,9 +43,10 @@ struct ContentView: View {
                         .padding(.leading, 20)
                         .background(Color.green)
                         .foregroundColor(Color.white)) {
-                    Text("shopping list 1")
-                    Text("shopping list 2")
-
+                            ForEach(shoppingLists) { shoppingList in
+                                ShoppingListRow(listName: shoppingList.name, itemCount: shoppingList.groceryItems.count)
+                            }
+                    
                     Text("Add a shopping list...")
                 }
                 Section(header:
@@ -61,7 +62,7 @@ struct ContentView: View {
                     Text("Add a recipe...")
                 }
             }
-            .navigationBarTitle("Grocery List", displayMode: .inline)
+            .navigationBarTitle("Shopping Lists", displayMode: .inline)
         }
     }
 }
