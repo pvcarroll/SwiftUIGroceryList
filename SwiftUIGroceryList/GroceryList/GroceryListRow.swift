@@ -1,5 +1,5 @@
 //
-//  ShoppingListRow.swift
+//  GroceryListRow.swift
 //  SwiftUIGroceryList
 //
 //  Created by Paul Carroll on 9/17/19.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct ShoppingListRow: View {
+struct GroceryListRow: View {
     var listName: String
     var itemCount: Int
     
@@ -17,24 +17,26 @@ struct ShoppingListRow: View {
             Text(listName)
             Spacer()
             Text(String(itemCount))
+                .bold()
                 .padding([.leading, .trailing], 10)
-                .padding(.top, -2)
+                .padding(.top, -1)
                 .background(Color.green)
                 .foregroundColor(.white)
                 .cornerRadius(12)
             Button(action: {
-                
+                print("SHOPPING LIST INFO")
             }) {
                 Image(systemName: "info.circle")
+                    .foregroundColor(.blue)
             }
             .padding(.leading, 5)
         }
     }
 }
 
-struct ShoppingListRow_Previews: PreviewProvider {
+struct GroceryListRow_Previews: PreviewProvider {
     static var previews: some View {
-        ShoppingListRow(listName: "Example list", itemCount: 3)
-            .previewLayout(.fixed(width: UIScreen.main.bounds.width, height: 40))
+        GroceryListRow(listName: "Example list", itemCount: 3)
+            .previewLayout(.fixed(width: 300, height: 40))
     }
 }

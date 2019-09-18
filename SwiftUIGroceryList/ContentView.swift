@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-let shoppingLists: [GroceryList] = [
+let groceryLists: [GroceryList] = [
     GroceryList(id: 1, name: "list 1", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
@@ -19,16 +19,13 @@ let shoppingLists: [GroceryList] = [
     GroceryList(id: 2, name: "list 2", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
-        GroceryItem(name: "oranges", quantity: 1, category: "produce"),
-        GroceryItem(name: "bananas", quantity: 1, category: "produce"),
-        GroceryItem(name: "almonds", quantity: 1, category: "nuts")
+        GroceryItem(name: "oranges", quantity: 1, category: "produce")
     ]),
     GroceryList(id: 3, name: "list 3", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
         GroceryItem(name: "oranges", quantity: 1, category: "produce"),
-        GroceryItem(name: "bananas", quantity: 1, category: "produce"),
-        GroceryItem(name: "almonds", quantity: 1, category: "nuts")
+        GroceryItem(name: "bananas", quantity: 1, category: "produce")
     ])
 ]
 
@@ -43,11 +40,13 @@ struct ContentView: View {
                         .padding(.leading, 20)
                         .background(Color.green)
                         .foregroundColor(Color.white)) {
-                            ForEach(shoppingLists) { shoppingList in
-                                ShoppingListRow(listName: shoppingList.name, itemCount: shoppingList.groceryItems.count)
+                            ForEach(groceryLists) { groceryList in
+                                NavigationLink(destination: GroceryListView(groceryList: groceryList)) {
+                                    GroceryListRow(listName: groceryList.name, itemCount: groceryList.groceryItems.count)
+                                }
                             }
-                    
                     Text("Add a shopping list...")
+                        .foregroundColor(Color.gray)
                 }
                 Section(header:
                     Text("Recipes")
@@ -60,9 +59,16 @@ struct ContentView: View {
                     Text("recipe row 2")
 
                     Text("Add a recipe...")
+                        .foregroundColor(Color.gray)
                 }
             }
             .navigationBarTitle("Shopping Lists", displayMode: .inline)
+            .navigationBarItems(leading:
+                Button(action: {
+                    print("SETTINGS TAPPED")
+                }) {
+                    Image(systemName: "gear")
+                })
         }
     }
 }

@@ -20,4 +20,14 @@ struct GroceryList: Identifiable {
         }
         return itemCategories
     }
+    var itemsByCategory: [String: [GroceryItem]] {
+        var categorizedItems = [String: [GroceryItem]]()
+        groceryItems.forEach { (item) in
+            if categorizedItems[item.category] == nil {
+                categorizedItems[item.category] = []
+            }
+            categorizedItems[item.category]?.append(item)
+        }
+        return categorizedItems
+    }
 }
