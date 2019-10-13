@@ -34,7 +34,7 @@ struct GroceryListView: View {
     }
 }
 
-private let sampleGroceryList = GroceryList(id: 1, name: "list 1", groceryItems: [
+private let sampleGroceryList = GroceryList(id: UUID().uuidString, name: "list 1", groceryItems: [
     GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
     GroceryItem(name: "chicken", quantity: 1, category: "Meat"),
     GroceryItem(name: "oranges", quantity: 1, category: "Produce"),

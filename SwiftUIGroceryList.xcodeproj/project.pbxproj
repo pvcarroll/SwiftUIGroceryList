@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7509E12523304BAE00D27ED0 /* GroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509E12423304BAE00D27ED0 /* GroceryList.swift */; };
 		7509E12723306A9D00D27ED0 /* GroceryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7509E12623306A9D00D27ED0 /* GroceryListView.swift */; };
+		7524BF67233AFF3D0058B166 /* AddGroceryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7524BF66233AFF3D0058B166 /* AddGroceryList.swift */; };
 		7552C90D2331D2EA0032F11B /* GroceryListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7552C90C2331D2EA0032F11B /* GroceryListItemRow.swift */; };
 		7558356923300C89008ACBB6 /* GroceryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7558356823300C89008ACBB6 /* GroceryItem.swift */; };
 		755D4713232EB4F60030BEC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755D4712232EB4F60030BEC7 /* AppDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		7509E12423304BAE00D27ED0 /* GroceryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryList.swift; sourceTree = "<group>"; };
 		7509E12623306A9D00D27ED0 /* GroceryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListView.swift; sourceTree = "<group>"; };
+		7524BF66233AFF3D0058B166 /* AddGroceryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGroceryList.swift; sourceTree = "<group>"; };
 		7552C90C2331D2EA0032F11B /* GroceryListItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryListItemRow.swift; sourceTree = "<group>"; };
 		7558356823300C89008ACBB6 /* GroceryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroceryItem.swift; sourceTree = "<group>"; };
 		755D470F232EB4F60030BEC7 /* SwiftUIGroceryList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIGroceryList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				7599B47C23310D16002A34F3 /* GroceryListRow.swift */,
+				7524BF66233AFF3D0058B166 /* AddGroceryList.swift */,
 			);
 			path = GroceryList;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 				7509E12723306A9D00D27ED0 /* GroceryListView.swift in Sources */,
 				7509E12523304BAE00D27ED0 /* GroceryList.swift in Sources */,
 				755D4715232EB4F60030BEC7 /* SceneDelegate.swift in Sources */,
+				7524BF67233AFF3D0058B166 /* AddGroceryList.swift in Sources */,
 				755D4717232EB4F60030BEC7 /* ContentView.swift in Sources */,
 				7552C90D2331D2EA0032F11B /* GroceryListItemRow.swift in Sources */,
 			);
@@ -333,6 +337,7 @@
 				DEVELOPMENT_TEAM = T443E98JT7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIGroceryList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -353,6 +358,7 @@
 				DEVELOPMENT_TEAM = T443E98JT7;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIGroceryList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

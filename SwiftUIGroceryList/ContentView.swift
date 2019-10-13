@@ -8,20 +8,20 @@
 
 import SwiftUI
 
-let groceryLists: [GroceryList] = [
-    GroceryList(id: 1, name: "list 1", groceryItems: [
+var groceryLists: [GroceryList] = [
+    GroceryList(id: UUID().uuidString, name: "list 1", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
         GroceryItem(name: "oranges", quantity: 1, category: "produce"),
         GroceryItem(name: "bananas", quantity: 1, category: "produce"),
         GroceryItem(name: "almonds", quantity: 1, category: "nuts")
     ]),
-    GroceryList(id: 2, name: "list 2", groceryItems: [
+    GroceryList(id: UUID().uuidString, name: "list 2", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
         GroceryItem(name: "oranges", quantity: 1, category: "produce")
     ]),
-    GroceryList(id: 3, name: "list 3", groceryItems: [
+    GroceryList(id: UUID().uuidString, name: "list 3", groceryItems: [
         GroceryItem(name: "milk", quantity: 1, category: "Dairy"),
         GroceryItem(name: "chicken", quantity: 1, category: "meat"),
         GroceryItem(name: "oranges", quantity: 1, category: "produce"),
@@ -45,9 +45,11 @@ struct ContentView: View {
                                     GroceryListRow(listName: groceryList.name, itemCount: groceryList.groceryItems.count)
                                 }
                             }
-                    Text("Add a shopping list...")
-                        .foregroundColor(Color.gray)
-                }
+                            NavigationLink(destination: AddGroceryList(name: "")) {
+                                Text("Add a shopping list...")
+                                .foregroundColor(Color.gray)
+                            }
+                        }
                 Section(header:
                     Text("Recipes")
                         .frame(minWidth: UIScreen.main.bounds.width, idealWidth: UIScreen.main.bounds.width, maxWidth: .infinity,

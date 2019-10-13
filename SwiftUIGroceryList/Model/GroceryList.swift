@@ -9,7 +9,7 @@
 import Foundation
 
 struct GroceryList: Identifiable {
-    var id: Int
+    var id: String
     var name: String
     var groceryItems: [GroceryItem]
     
